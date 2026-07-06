@@ -1,0 +1,62 @@
+# Exclude build and dependency artifacts
+node_modules/
+bower_components/
+jspm_packages/
+.npm/
+.yarn/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+bin/
+obj/
+target/
+
+# Package manager lock files (extremely token-heavy)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Cargo.lock
+Gemfile.lock
+poetry.lock
+mix.lock
+
+# Media and assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.mp4
+*.mp3
+*.pdf
+*.zip
+*.tar.gz
+*.dmg
+
+# IDE and OS configurations
+.git/
+.svn/
+.hg/
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Antigravity/Agent temp directories
+.gemini/
+.agents/
+.agy/
+scratch/
+walkthrough.md
+implementation_plan.md
+task.md
+learning_proposal.md
