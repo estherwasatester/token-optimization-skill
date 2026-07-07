@@ -65,3 +65,10 @@ Inspired by [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman). C
 *   Keep your `AGENTS.md` file under **600 tokens**. It is loaded into *every* conversation.
 *   If it exceeds 2,000 tokens, refactor task-specific instructions into dedicated `SKILL.md` files that load on-demand.
 *   Periodically audit and prune `AGENTS.md` — AI-generated instructions tend to bloat over time.
+
+## 9. Automated Pre-Invocation Prompt Interceptor (Hook)
+
+*   **Prompt Interception**: A registered global `PreInvocation` hook (`intercept_wasteful_prompts.py`) scans user prompts on every turn.
+*   **Vague/Wasteful Query Detection**: It checks for extremely vague prompts (e.g., short words like "go", "do it", "test" with no details) or massive print/dump requests (e.g., "explain every line in the codebase", "print everything") or infinite loops.
+*   **Active Safeguard**: When a wasteful query is intercepted, the hook injects a system warning instructing the agent to **halt expensive tool execution** and prompt the user for clarification, preventing hundreds of dollars in wasted token expenses.
+
