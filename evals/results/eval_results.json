@@ -1,0 +1,367 @@
+{
+  "run_date": "2026-07-07",
+  "overall": {
+    "total": 39,
+    "passed": 39,
+    "failed": 0,
+    "pass_rate": 1.0
+  },
+  "interceptor": {
+    "total": 35,
+    "passed": 35,
+    "failed": 0,
+    "by_category": {
+      "vague": {
+        "pass": 10,
+        "fail": 0
+      },
+      "massive_dump": {
+        "pass": 8,
+        "fail": 0
+      },
+      "loop": {
+        "pass": 4,
+        "fail": 0
+      },
+      "valid": {
+        "pass": 10,
+        "fail": 0
+      },
+      "boundary": {
+        "pass": 3,
+        "fail": 0
+      }
+    },
+    "cases": [
+      {
+        "id": "vague-001",
+        "category": "vague",
+        "prompt": "do it",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-002",
+        "category": "vague",
+        "prompt": "go",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-003",
+        "category": "vague",
+        "prompt": "run",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-004",
+        "category": "vague",
+        "prompt": "test?",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-005",
+        "category": "vague",
+        "prompt": "help",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-006",
+        "category": "vague",
+        "prompt": "start",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-007",
+        "category": "vague",
+        "prompt": "ok",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-008",
+        "category": "vague",
+        "prompt": "proceed",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-009",
+        "category": "vague",
+        "prompt": "yes",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "vague-010",
+        "category": "vague",
+        "prompt": "run tests",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true,
+        "notes": "2-word prompt with 'run' in vague_words; known conservative catch \u2014 consider a noun-whitelist if too noisy"
+      },
+      {
+        "id": "dump-001",
+        "category": "massive_dump",
+        "prompt": "please print all files in the repository",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-002",
+        "category": "massive_dump",
+        "prompt": "explain every line of code",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-003",
+        "category": "massive_dump",
+        "prompt": "show me everything",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-004",
+        "category": "massive_dump",
+        "prompt": "dump all the logs",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-005",
+        "category": "massive_dump",
+        "prompt": "show all the tests",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-006",
+        "category": "massive_dump",
+        "prompt": "list every file in this repo",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-007",
+        "category": "massive_dump",
+        "prompt": "explain every module in detail",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "dump-008",
+        "category": "massive_dump",
+        "prompt": "everything I need is in the config file",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true,
+        "notes": "known false positive \u2014 'everything' substring match fires; current behavior documented; consider phrase-boundary matching to fix"
+      },
+      {
+        "id": "loop-001",
+        "category": "loop",
+        "prompt": "print hello forever",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "loop-002",
+        "category": "loop",
+        "prompt": "run this in an infinite loop",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "loop-003",
+        "category": "loop",
+        "prompt": "say the answer over and over",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "loop-004",
+        "category": "loop",
+        "prompt": "run the test loop over and over",
+        "expected_blocked": true,
+        "actual_blocked": true,
+        "pass": true
+      },
+      {
+        "id": "valid-001",
+        "category": "valid",
+        "prompt": "implement a search function in database.py",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-002",
+        "category": "valid",
+        "prompt": "run the unit tests for the auth module",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-003",
+        "category": "valid",
+        "prompt": "explain the token-saver skill architecture",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-004",
+        "category": "valid",
+        "prompt": "fix the null check bug on line 42 of utils.py",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-005",
+        "category": "valid",
+        "prompt": "add error handling to the REST API endpoint",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-006",
+        "category": "valid",
+        "prompt": "refactor the authentication module for clarity",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-007",
+        "category": "valid",
+        "prompt": "help me understand how caveman mode compresses output",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-008",
+        "category": "valid",
+        "prompt": "show me the diff for the last commit",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-009",
+        "category": "valid",
+        "prompt": "what does the SKILL.md file describe?",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "valid-010",
+        "category": "valid",
+        "prompt": "write a unit test for the count_tokens function",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true
+      },
+      {
+        "id": "boundary-001",
+        "category": "boundary",
+        "prompt": "repeat the build loop",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true,
+        "notes": "loop keywords present but no print/say/run co-trigger required by rule 3"
+      },
+      {
+        "id": "boundary-002",
+        "category": "boundary",
+        "prompt": "show me the logs from the last deployment",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true,
+        "notes": "'show' is not in massive_keywords; only 'show all' and 'show me everything' are"
+      },
+      {
+        "id": "boundary-003",
+        "category": "boundary",
+        "prompt": "test the login flow end to end",
+        "expected_blocked": false,
+        "actual_blocked": false,
+        "pass": true,
+        "notes": "5 words; 'test' only triggers when len(words) <= 2"
+      }
+    ]
+  },
+  "benchmarks": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "token_counting_method": "heuristic (3.5 chars/token)",
+    "scenarios": {
+      "workspace_hygiene": {
+        "savings_pct": 98.80268491301679,
+        "savings_tokens": 486044,
+        "without_tokens": 491934,
+        "with_tokens": 5890,
+        "threshold_pct": 95.0,
+        "threshold_tokens": 400000,
+        "pass": true
+      },
+      "context_slicing": {
+        "savings_pct": 88.81929885087976,
+        "savings_tokens": 33468,
+        "without_tokens": 37681,
+        "with_tokens": 4213,
+        "threshold_pct": 80.0,
+        "threshold_tokens": 25000,
+        "pass": true
+      },
+      "caveman_mode": {
+        "savings_pct": 58.19672131147541,
+        "savings_tokens": 142,
+        "without_tokens": 244,
+        "with_tokens": 102,
+        "threshold_pct": 50.0,
+        "threshold_tokens": 100,
+        "pass": true
+      },
+      "agents_md": {
+        "savings_pct": 76.71517671517671,
+        "savings_tokens": 3690,
+        "without_tokens": 4810,
+        "with_tokens": 1120,
+        "threshold_pct": 70.0,
+        "threshold_tokens": 2000,
+        "pass": true
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_comment": "Minimum pass thresholds for benchmark scenarios. Set conservatively below measured values to avoid fixture-drift flakiness while still catching regressions.",
+  "workspace_hygiene": {
+    "description": "Tokens saved by .antigravityignore excluding lock files and build outputs",
+    "min_savings_pct": 95.0,
+    "min_savings_tokens": 400000,
+    "measured_baseline_pct": 98.8,
+    "measured_baseline_tokens": 486044
+  },
+  "context_slicing": {
+    "description": "Tokens saved by reading a 30-line slice vs the full 131KB react-dom bundle",
+    "min_savings_pct": 80.0,
+    "min_savings_tokens": 25000,
+    "measured_baseline_pct": 88.8,
+    "measured_baseline_tokens": 33468
+  },
+  "caveman_mode": {
+    "description": "Output tokens saved by Caveman Mode compression across 3 prose response pairs",
+    "min_savings_pct": 50.0,
+    "min_savings_tokens": 100,
+    "measured_baseline_pct": 58.2,
+    "measured_baseline_tokens": 142
+  },
+  "agents_md": {
+    "description": "Tokens saved over a 10-turn session by keeping AGENTS.md lean (<600 tokens)",
+    "min_savings_pct": 70.0,
+    "min_savings_tokens": 2000,
+    "measured_baseline_pct": 76.7,
+    "measured_baseline_tokens": 3690
+  }
+}
