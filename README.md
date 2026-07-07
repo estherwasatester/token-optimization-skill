@@ -73,18 +73,32 @@ To use the hook, copy it to your scratch directory and register it inside your g
 
 ---
 
-## 🔬 Validation Techniques
+## 🔬 Validation, Verification & Collaborative Humility Note
 
-We have provided two dedicated test scripts to quantitatively and interactively verify our token optimization techniques:
+### 🤝 Collaborative Humility: Spotting the Mistake
+In our initial iterations, the performance verification framework used a highly optimistic synthetic simulator. It relied on simple string multiplication and mock ratios to claim a flat "98.3% global reduction" in token usage. 
 
-### 1. Quantitative Performance Simulator
-Runs a mock JS/Node directory indexing, full-file vs sliced read, prose compression, and budget project to output exact token count tables.
+**Claude checked our work and discovered that this implementation was wrong** — pointing out that real-world files, monorepo lockfiles, and output code structures do not scale linearly or behave like synthetic models. Claude checked in a dedicated `real-benchmarks` branch containing high-fidelity, real-file measurement routines. 
+
+We fully admit this initial modeling error, merged Claude's changes, and have updated this entire project to use **only realistic, honest, and high-fidelity testing techniques**.
+
+### How It Was Tested & Verified
+We now run real-file, deterministic benchmarks using actual open-source project artifacts:
+
+#### 1. Quantitative Performance Simulator
+Downloads real files directly from GitHub (e.g., VS Code's `package-lock.json` and React's `yarn.lock`) to test `.antigravityignore` workspace hygiene.
+- Downloads React-DOM's minified production bundle (`react-dom.production.min.js` at 131 KB) to benchmark **Context Slicing** against targeted 30-line slices.
+- Compares 3 representative conversational prose responses to count the exact token reductions of **Caveman Mode** (keeping code blocks 100% untouched).
+- Counts the turn-by-turn instruction tax of lean vs. bloated `AGENTS.md` system prompt guidelines over a 10-turn session.
+- Uses the actual Gemini token-counting API when a `GEMINI_API_KEY` is present (and falls back to an industry-standard 3.5 chars/token code heuristic when offline).
+
+To run this:
 ```bash
 python3 test_token_saver.py
 ```
 *Creates/updates a local markdown verification report at [`benchmark_report.md`](benchmark_report.md).*
 
-### 2. Interactive Prompt Interceptor Tester
+#### 2. Interactive Prompt Interceptor Tester
 Allows you to run static classification tests against various prompt examples to verify the interceptor hook logic.
 ```bash
 python3 test_interceptor.py
