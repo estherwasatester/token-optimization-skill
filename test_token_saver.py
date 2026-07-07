@@ -173,8 +173,9 @@ def run_simulation():
     print(f"  🎉 TOTAL ESTIMATED SAVINGS:           ~{total_saved} tokens ({overall_pct_saved:.1f}% Cost Reduction!)")
     print("=" * 60)
 
-    # Write results to artifact
-    report_path = "/Users/estherlloyd/.gemini/antigravity-cli/brain/62a0b549-07ec-41f7-acf7-5502c665bcf4/benchmark_report.md"
+    # Write results to the local repository directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    report_path = os.path.join(script_dir, "benchmark_report.md")
     write_report(report_path, unfiltered_tokens, filtered_tokens, savings_scen1, pct_savings_scen1,
                  full_file_tokens, sliced_tokens, savings_scen2, pct_savings_scen2,
                  standard_tokens, caveman_tokens, savings_scen3, pct_savings_scen3,
