@@ -84,10 +84,10 @@ Three representative response pairs. Code blocks are never compressed.
 | | Tokens/turn | × 10 turns |
 |--|-------------|------------|
 | Bloated AGENTS.md | 2,115 | 21,150 |
-| Lean AGENTS.md | 528 | 5,280 |
-| **Savings** | **1,587** | **15,870 (75.0%)** |
+| Lean AGENTS.md | 538 | 5,380 |
+| **Savings** | **1,577** | **15,770 (74.6%)** |
 
-> Savings are linear with session length. At 100 turns: ~158,700 tokens saved.
+> Savings are linear with session length. At 100 turns: ~157,700 tokens saved.
 > The lean version loads detailed guidance on demand via skills — total guidance
 > accessed is similar, but the cost is only paid when that guidance is needed.
 
@@ -98,8 +98,8 @@ Three representative response pairs. Code blocks are never compressed.
 | Configuration | Tokens |
 |---------------|--------|
 | Without optimisations | ~551,868 |
-| With optimisations | ~15,787 |
-| **Total saved** | **~536,081 (97.1%)** |
+| With optimisations | ~15,887 |
+| **Total saved** | **~535,981 (97.1%)** |
 
 > ⚠️  This aggregate sums four different scenario types that cannot be
 > meaningfully collapsed into a single headline percentage. The original
@@ -116,6 +116,6 @@ Three representative response pairs. Code blocks are never compressed.
 | Workspace hygiene | ~486,601 tokens per workspace index | Projects with large lock files / build outputs the agent would otherwise read |
 | Context slicing | ~33,468 tokens per full-bundle read | Any time the agent reads a large file instead of a targeted slice |
 | Caveman mode | ~58% on output prose | Prose-heavy responses (no effect on code-heavy responses) |
-| AGENTS.md budgeting | ~1,587 tokens/turn | Sessions where AGENTS.md exceeds ~600 tokens |
+| AGENTS.md budgeting | ~1,577 tokens/turn | Sessions where AGENTS.md exceeds ~600 tokens |
 
 Token counting method: **heuristic (3.5 chars/token)**
