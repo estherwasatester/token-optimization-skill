@@ -327,10 +327,10 @@
     "token_counting_method": "heuristic (3.5 chars/token)",
     "scenarios": {
       "workspace_hygiene": {
-        "savings_pct": 98.80268491301679,
-        "savings_tokens": 486044,
-        "without_tokens": 491934,
-        "with_tokens": 5890,
+        "savings_pct": 98.74348864533384,
+        "savings_tokens": 486601,
+        "without_tokens": 492793,
+        "with_tokens": 6192,
         "threshold_pct": 95.0,
         "threshold_tokens": 400000,
         "pass": true
@@ -354,10 +354,10 @@
         "pass": true
       },
       "agents_md": {
-        "savings_pct": 76.71517671517671,
-        "savings_tokens": 3690,
-        "without_tokens": 4810,
-        "with_tokens": 1120,
+        "savings_pct": 75.0354609929078,
+        "savings_tokens": 15870,
+        "without_tokens": 21150,
+        "with_tokens": 5280,
         "threshold_pct": 70.0,
         "threshold_tokens": 2000,
         "pass": true

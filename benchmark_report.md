@@ -28,15 +28,15 @@ tool call reads them.
 
 | File | Tokens | Status |
 |------|--------|--------|
-| package.json | 3,929 | kept |
-| package-lock.json | 213,038 | excluded by ignore |
+| package.json | 4,231 | kept |
+| package-lock.json | 213,595 | excluded by ignore |
 | yarn.lock | 235,325 | excluded by ignore |
 | dist/react-dom.min.js | 37,681 | excluded by ignore |
 | src/ReactHooks.js | 1,961 | kept |
 
-- **Without `.antigravityignore`**: ~491,934 tokens
-- **With `.antigravityignore`**: ~5,890 tokens
-- **Savings**: ~486,044 tokens (98.8% reduction)
+- **Without `.antigravityignore`**: ~492,793 tokens
+- **With `.antigravityignore`**: ~6,192 tokens
+- **Savings**: ~486,601 tokens (98.7% reduction)
 
 > **Honest caveat**: These savings only occur when the agent actually reads the
 > excluded files. A task scoped to `src/` alone never touches lock files, so
@@ -83,11 +83,11 @@ Three representative response pairs. Code blocks are never compressed.
 
 | | Tokens/turn | × 10 turns |
 |--|-------------|------------|
-| Bloated AGENTS.md | 481 | 4,810 |
-| Lean AGENTS.md | 112 | 1,120 |
-| **Savings** | **369** | **3,690 (76.7%)** |
+| Bloated AGENTS.md | 2,115 | 21,150 |
+| Lean AGENTS.md | 528 | 5,280 |
+| **Savings** | **1,587** | **15,870 (75.0%)** |
 
-> Savings are linear with session length. At 100 turns: ~36,900 tokens saved.
+> Savings are linear with session length. At 100 turns: ~158,700 tokens saved.
 > The lean version loads detailed guidance on demand via skills — total guidance
 > accessed is similar, but the cost is only paid when that guidance is needed.
 
@@ -97,9 +97,9 @@ Three representative response pairs. Code blocks are never compressed.
 
 | Configuration | Tokens |
 |---------------|--------|
-| Without optimisations | ~534,669 |
-| With optimisations | ~11,325 |
-| **Total saved** | **~523,344 (97.9%)** |
+| Without optimisations | ~551,868 |
+| With optimisations | ~15,787 |
+| **Total saved** | **~536,081 (97.1%)** |
 
 > ⚠️  This aggregate sums four different scenario types that cannot be
 > meaningfully collapsed into a single headline percentage. The original
@@ -113,9 +113,9 @@ Three representative response pairs. Code blocks are never compressed.
 
 | Strategy | Measured saving | When it applies |
 |----------|----------------|-----------------|
-| Workspace hygiene | ~486,044 tokens per workspace index | Projects with large lock files / build outputs the agent would otherwise read |
+| Workspace hygiene | ~486,601 tokens per workspace index | Projects with large lock files / build outputs the agent would otherwise read |
 | Context slicing | ~33,468 tokens per full-bundle read | Any time the agent reads a large file instead of a targeted slice |
 | Caveman mode | ~58% on output prose | Prose-heavy responses (no effect on code-heavy responses) |
-| AGENTS.md budgeting | ~369 tokens/turn | Sessions where AGENTS.md exceeds ~600 tokens |
+| AGENTS.md budgeting | ~1,587 tokens/turn | Sessions where AGENTS.md exceeds ~600 tokens |
 
 Token counting method: **heuristic (3.5 chars/token)**
