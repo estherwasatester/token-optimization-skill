@@ -63,7 +63,7 @@ Inspired by [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman). C
 ## 8. AGENTS.md Budget Rule
 
 *   Keep your `AGENTS.md` file under **600 tokens**. It is loaded into *every* conversation.
-*   See the active workspace rules as a real-world example of a lean, optimized guideline prompt: [resources/AGENTS.md](resources/AGENTS.md)
+*   See the active workspace rules as a real-world example of a lean, optimized guideline prompt: [resources/example-AGENTS.md](resources/example-AGENTS.md)
 *   If it exceeds 2,000 tokens, refactor task-specific instructions into dedicated `SKILL.md` files that load on-demand.
 *   Periodically audit and prune `AGENTS.md` — AI-generated instructions tend to bloat over time.
 

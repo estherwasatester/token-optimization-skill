@@ -384,7 +384,7 @@ def scenario_agents_md():
 
     # Try to load the real workspace AGENTS.md dynamically, falling back to static template if not found.
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    agents_path = os.path.join(base_dir, "resources", "AGENTS.md")
+    agents_path = os.path.join(base_dir, "resources", "example-AGENTS.md")
     if os.path.exists(agents_path):
         try:
             with open(agents_path, "r", encoding="utf-8") as f:
