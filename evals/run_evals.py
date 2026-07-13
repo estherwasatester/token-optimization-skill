@@ -3,9 +3,9 @@
 Token-Saver Skill — Eval Runner
 
 Runs two eval suites and writes structured results to evals/results/eval_results.json.
+Strictly requires the real Gemini API token counter. Mock/heuristic fallback is disabled.
 
-  python3 evals/run_evals.py
-  GEMINI_API_KEY=<key> python3 evals/run_evals.py   # use real Gemini token counts
+  GEMINI_API_KEY=<key> python3 evals/run_evals.py
 
 Exit code 0 = all evals passed. Non-zero = one or more failures.
 """
